@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header id="homes">
+        <nav id="nav">
+            <div class="nav-center">
+                <div class="nav-header">
+                    <img src="./home.jpeg" alt="homepage" class="home"/>
+                    <button class="nav-toggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="link-container">
+                    <ul class="links">
+                        <li>
+                            <a href="#homes" class="scroll-link">HOME</a>
+                        </li>
+                        <li>
+                            <a href="#BEDROOM" class="scroll-link">BEDROOM</a>
+                        </li>
+                        <li>
+                            <a href="#DINNING" class="scroll-link">DINNING</a>
+                        </li>
+                        <li>
+                            <a href="#KITCHEN" class="scroll-link">KITCHEN</a>
+                        </li>
+                        <li>
+                            <a href="#BACKYARD" class="scroll-link">BACKYARD</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="banner">
+            <div class="container">
+                <h1>DESIGN YOUR HOUSE</h1>
+                <p>Success is the sum of small efforts - repeated day in and day out.</p>
+                <a href="#Visit" class="scroll-link btn btn-white">
+                    Explore House
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="BEDROOM" class="section">
+        <div class="title">
+            <h2>BEDROOM <span>US</span></h2>
+        </div>
+    </section>
+    <section id="DINNING" class="section">
+        <div class="title">
+            <h2>DINNING <span>US</span></h2>
+        </div>
+    </section>
+    <section id="KITCHEN" class="section">
+        <div class="title">
+            <h2>KITCHEN <span>US</span></h2>
+        </div>
+    </section>
+    <section id="BACKYARD" class="section">
+        <div class="title">
+            <h2>BACKYARD <span>US</span></h2>
+        </div>
+    </section>
+    <footer class="section">
+        <p> 
+            Copyright &copy; Cakroad Travel Tours Company 2024.
+            <span id="date">2024</span>. All rights reserved.
+        </p>
+    </footer>
+    <a href="#homes" class="scroll-link top-link">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <script>
+        const date = document.getElementById('date');
+        date.innerHTML = new Date().getFullYear();
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const linksContainer = document.querySelector('.link-container');
+
+        navToggle.addEventListener('click', function() {
+            linksContainer.classList.toggle('show-links');
+        });
+
+        const scrollLinks = document.querySelectorAll('.scroll-link');
+
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const id = e.currentTarget.getAttribute('href').slice(1);
+                const element = document.getElementById(id);
+
+                const navHeight = document.getElementById('nav').getBoundingClientRect().height;
+                const containerHeight = linksContainer.getBoundingClientRect().height;
+                const fixedNav = document.getElementById('nav').classList.contains('fixed-nav');
+
+                let position = element.offsetTop - navHeight;
+
+                if (!fixedNav) {
+                    position = position - navHeight;
+                }
+                if (navHeight > 82) {
+                    position = position + containerHeight;
+                }
+
+                window.scrollTo({
+                    left: 0,
+                    top: position,
+                });
+
+                linksContainer.classList.remove('show-links');
+            });
+        });
+    </script>
+</body>
+</html>

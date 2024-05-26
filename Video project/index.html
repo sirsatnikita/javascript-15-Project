@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+            <video muted autoplay loop class="video-container">
+                <source src="./Chess_16_Videvo.mp4" type="video/mp4">
+            </video>
+                <h1>chess</h1>
+                <button class="switch-btn">
+                    <span>play</span>
+                    <span>pause</span>
+                    <span class="switch"></span>
+            </button>
+    </header>
+
+    <script>document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector(".switch-btn");
+        const video = document.querySelector(".video-container");
+    
+        btn.addEventListener("click", () => {
+            if (btn.classList.contains("active")) {
+                video.pause();
+                btn.classList.remove("active");
+            } else {
+                video.play();
+                btn.classList.add("active");
+            }
+        });
+    });
+    </script>
+</body>
+</html>

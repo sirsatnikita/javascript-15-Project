@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Question</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+
+</head>
+<body>
+    <h2 class="General">General Questions</h2>
+    <section class="Questions">
+        <div class="title">
+          
+        </div>
+        <div class="section-center">
+            <article class="Question">
+                <div class="Question-title">
+                    <p>What is the difference between ID and Class?</p>
+                    
+                    <button type="button" class="Question-btn">
+                        <span class="plus-icon">
+                            <i class="far fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="far fa-minus-square"></i>
+                        </span>
+                    </button>
+                    
+                </div>
+        
+                <div class="Question-text">
+                    <hr>
+                    <p>
+                        An ID is a unique identifier in HTML that should be used for a single element. A class, however, can be used for multiple elements. IDs are typically used for elements that appear only once per page, while classes can be used to apply styles to multiple elements.
+                    </p>
+                </div>
+            </article>
+            <article class="Question">
+                <div class="Question-title">
+                    <p>How can we divide a wed page into two partition ?</p>
+                    
+                    <button type="button" class="Question-btn">
+                        <span class="plus-icon">
+                            <i class="far fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="far fa-minus-square"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="Question-text">
+                    <hr>
+                    <p>
+                        can we divide a wed page into two partition by using CSS Grid and CSS flexbox.
+                    </p>
+                    
+                </div>
+            </article>
+            <article class="Question">
+                <div class="Question-title">
+                    <p>what is symentic html element</p>
+                    <button type="button" class="Question-btn">
+                        <span class="plus-icon">
+                            <i class="far fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="far fa-minus-square"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="Question-text">
+                    <hr>
+                    <p>
+                        Semantic HTML elements provide meaning and structure to web content, improving accessibility, SEO, and readability.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.Question-btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const question = button.closest('.Question');
+            question.classList.toggle('show-text');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
