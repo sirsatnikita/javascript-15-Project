@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider</title>
+    <title>CountDown</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="slide-container">
-        <div class="slide">
-            <img src="./img-1.jpeg" class="slide-img" alt="Image 1"/>
-            <h1>1</h1>
-        </div>
-        <div class="slide">
-            <h1>2</h1>
-        </div>
-        <div class="slide">
-            <img src="img-2.jpeg" class="slide-img" alt="Image 2"/>
-            <h1>3</h1>
-        </div>
-        <div class="slide person-slide">
-            <div class="circle" style="background-image: url('person-1.jpeg');"></div>
-            <h4>Susan Doe</h4>
-            <h1>4</h1>
-        </div>
-    </div>
-    <div class="btn-container">
-        <button type="button" class="prevBtn">prev</button>
-        <button type="button" class="nextBtn">next</button>
-    </div>
-    <script src="script.js"></script>
+    <section class="section-center">
+        <article class="gift-img">
+            <img src="./gift.jpeg" alt="gift picture"/>
+        </article>
+        <article class="gift-info">
+            <h3>Old Iphone giveaway</h3>
+            <h4 class="giveaway">
+                giveaway ends on Sunday, 24 April 2025, 8:00 AM
+            </h4>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Numquam nemo, quos iusto aspernatur autem provident blanditiis, 
+                vitae aliquid esse quae, similique labore? Deserunt praesentium minima rerum facilis. 
+                Aperiam, laborum! Voluptatibus!
+            </p>
+            <div class="deadline">
+                <div class="deadline-format">
+                    <h4 class="days">34</h4>
+                    <span>days</span>  
+                </div>
+                <div class="deadline-format">
+                    <h4 class="hours">34</h4>
+                    <span>hours</span>  
+                </div>
+                <div class="deadline-format">
+                    <h4 class="min">34</h4>
+                    <span>min</span>  
+                </div>
+                <div class="deadline-format">
+                    <h4 class="sec">34</h4>
+                    <span>sec</span>  
+                </div>
+            </div>
+        </article>
+    </section>
+    <script src="./script.js"></script>
 </body>
 </html>

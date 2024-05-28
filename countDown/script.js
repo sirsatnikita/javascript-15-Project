@@ -1,32 +1,32 @@
-const daysElement = document.getElementById("days");
-const hoursElement = document.getElementById("hours");
-const minutesElement = document.getElementById("minutes");
-const secondsElement = document.getElementById("seconds");
+document.addEventListener('DOMContentLoaded', () => {
+  const daysEl = document.querySelector('.days');
+  const hoursEl = document.querySelector('.hours');
+  const minEl = document.querySelector('.min');
+  const secEl = document.querySelector('.sec');
 
-const giveawayDate = new Date("June 2, 2024 11:30:00").getTime();
+  function countdown() {
+      const endDate = new Date('April 24, 2025 08:00:00').getTime(); // Update the year to future date
+      const now = new Date().getTime();
+      const timeRemaining = endDate - now;
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const timeLeft = giveawayDate - now;
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      daysEl.textContent = days;
+      hoursEl.textContent = hours;
+      minEl.textContent = minutes;
+      secEl.textContent = seconds;
 
-  daysElement.innerHTML = days < 10 ? `0${days}` : days;
-  hoursElement.innerHTML = hours < 10 ? `0${hours}` : hours;
-  minutesElement.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-  secondsElement.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-
-  if (timeLeft < 0) {
-    clearInterval(countdownInterval);
-    daysElement.innerHTML = "00";
-    hoursElement.innerHTML = "00";
-    minutesElement.innerHTML = "00";
-    secondsElement.innerHTML = "00";
+      if (timeRemaining < 0) {
+          clearInterval(countdownInterval);
+          daysEl.textContent = '0';
+          hoursEl.textContent = '0';
+          minEl.textContent = '0';
+          secEl.textContent = '0';
+      }
   }
-}
 
-const countdownInterval = setInterval(updateCountdown, 1000);
-updateCountdown();
+  const countdownInterval = setInterval(countdown, 1000);
+});
